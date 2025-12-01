@@ -39,3 +39,9 @@ button {
 button:hover {
   background-color: #34495e;
 }
+
+#meditationImg {
+  display: block;
+  margin: auto;
+  width: 50%;
+}

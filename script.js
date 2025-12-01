@@ -14,46 +14,45 @@ function myFunction() {
   }
 }
 
-// STEP 1: Select the link inside the background section
+//STEP 1: Select the link inside the background section
 // This gives us access to modify the link text and URL
 const link = document.querySelector('#background a');
 
-// STEP 2: Change the link text
+//STEP 2: Change the link text
 link.textContent = 'Mozilla Developer Network';
 
-// STEP 2 (continued): Change the link destination
+//Change the link destination
 link.href = 'https://developer.mozilla.org';
 
-// STEP 3: Reference the <section> to add new content
+//STEP 3: Reference the <section> to add new content
 const sect = document.querySelector('#background');
 
-// STEP 3: Create a new paragraph and add text to it
+//Create a new paragraph and add text to it
 const para = document.createElement('p');
 para.textContent = 'Meditation can also improve focus and memory, according to multiple neuroscience studies.';
 
-// Append the new paragraph to the section
+//Append the new paragraph to the section
 sect.appendChild(para);
 
-// STEP 3: Add a new text node to the paragraph containing the link
+//Add a new text node to the paragraph containing the link
 const text = document.createTextNode(' — a trustworthy source for web knowledge.');
 const linkPara = document.querySelector('#background p');
 
-// Append this text to the paragraph
+//Append this text to the paragraph
 linkPara.appendChild(text);
 
-// STEP 4: Move the paragraph to the bottom of the section
+//STEP 4: Move the paragraph to the bottom of the section
 sect.appendChild(linkPara);
 
-// STEP 4: Remove the paragraph using removeChild()
+//Remove the paragraph using removeChild()
 sect.removeChild(linkPara);
 
-// STEP 4: Since we still have the reference, remove the paragraph completely
+//Since we still have the reference, remove the paragraph completely
 linkPara.remove();
 
-// STEP 5: Style the newly created paragraph using JavaScript
+//STEP 5: Style the newly created paragraph using JavaScript
 para.style.color = 'white';
 para.style.backgroundColor = 'black';
 para.style.padding = '10px';
 para.style.width = '250px';
 para.style.textAlign = 'center';
-
