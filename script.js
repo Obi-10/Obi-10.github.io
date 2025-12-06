@@ -36,8 +36,8 @@ sect.appendChild(para);
 //Style the newly created paragraph
 para.style.color = '#333';
 para.style.backgroundColor = '#e0f7fa';
-para.style.padding = '10px';
-para.style.width = '80%';
+para.style.padding = '5px';
+para.style.width = '60%';
 para.style.margin = '10px auto';
 para.style.textAlign = 'center';
 para.style.borderRadius = '5px';
