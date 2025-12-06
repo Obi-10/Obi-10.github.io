@@ -48,12 +48,12 @@ para.textContent = 'Studies suggest that meditation can boost creativity and pro
 // Append the new paragraph to the section
 sect.appendChild(para);
 
-// Style the new paragraph to match your layout
+// Style the new paragraph
 para.style.color = '#333';
 para.style.backgroundColor = '#d9d7d7';
 para.style.padding = '5px';
-para.style.width = '30%';           // same as image width
-para.style.margin = '10px auto';    // center horizontally
+para.style.width = '30%';
+para.style.margin = '10px auto';
 para.style.textAlign = 'center';
 para.style.borderRadius = '5px';
 para.style.fontSize = '16px'
