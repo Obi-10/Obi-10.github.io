@@ -27,14 +27,14 @@ link.href = 'https://developer.mozilla.org';
 //STEP 3: Reference the <section> to add new content
 const sect = document.querySelector('#background');
 
-//Create a new paragraph and add text to it
+//Create a new paragraph and add text to it - FIGURE OUT WHAT YOU WANT TO ADD HERE FOR THE TEXT
 const para = document.createElement('p');
 para.textContent = 'Meditation can also improve focus and memory, according to multiple neuroscience studies.';
 
 //Append the new paragraph to the section
 sect.appendChild(para);
 
-//Add a new text node to the paragraph containing the link
+//Add a new text node to the paragraph containing the link - CHANGE THE TEXT HERE TO THE LINK!
 const text = document.createTextNode(' — a trustworthy source for web knowledge.');
 const linkPara = document.querySelector('#background p');
 
