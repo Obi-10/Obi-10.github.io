@@ -50,7 +50,7 @@ sect.appendChild(para);
 
 // Style the new paragraph to match your layout
 para.style.color = '#333';
-para.style.backgroundColor = '#e0f7fa';
+para.style.backgroundColor = '#d9d7d7';
 para.style.padding = '5px';
 para.style.width = '30%';           // same as image width
 para.style.margin = '10px auto';    // center horizontally
