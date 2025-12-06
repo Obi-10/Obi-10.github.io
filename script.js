@@ -57,7 +57,7 @@ para.style.margin = '10px auto';
 para.style.textAlign = 'center';
 para.style.borderRadius = '5px';
 para.style.fontSize = '16px';
-para.style.maxWidth = '300px';
+para.style.minWidth = '300px';
 
 // -----------------------------
 // Step 3: Move the Source Link Paragraph to the Bottom
