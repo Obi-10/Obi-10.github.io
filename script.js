@@ -19,23 +19,23 @@ function myFunction() {
 const link = document.querySelector('#background a');
 
 //STEP 2: Change the link text
-link.textContent = 'Mozilla Developer Network';
+link.textContent = 'Nature Research Article';
 
 //Change the link destination
-link.href = 'https://developer.mozilla.org';
+link.href = 'https://www.nature.com/articles/nrn3916';
 
 //STEP 3: Reference the <section> to add new content
 const sect = document.querySelector('#background');
 
 //Create a new paragraph and add text to it - FIGURE OUT WHAT YOU WANT TO ADD HERE FOR THE TEXT
 const para = document.createElement('p');
-para.textContent = 'Meditation can also improve focus and memory, according to multiple neuroscience studies.';
+para.textContent = 'Studies also suggest that meditation can boost creativity and problem-solving skills over time.';
 
 //Append the new paragraph to the section
 sect.appendChild(para);
 
 //Add a new text node to the paragraph containing the link - CHANGE THE TEXT HERE TO THE LINK!
-const text = document.createTextNode(' — a trustworthy source for web knowledge.');
+const text = document.createTextNode(' — a trustworthy source for knowledge.');
 const linkPara = document.querySelector('#background p');
 
 //Append this text to the paragraph
@@ -45,14 +45,15 @@ linkPara.appendChild(text);
 sect.appendChild(linkPara);
 
 //Remove the paragraph using removeChild()
-sect.removeChild(linkPara);
+//sect.removeChild(linkPara);
 
 //Since we still have the reference, remove the paragraph completely
-linkPara.remove();
+//linkPara.remove();
 
-//STEP 5: Style the newly created paragraph using JavaScript
-para.style.color = 'white';
-para.style.backgroundColor = 'black';
+para.style.color = '#333';
+para.style.backgroundColor = '#e0f7fa';
 para.style.padding = '10px';
-para.style.width = '250px';
+para.style.width = '90%';
+para.style.margin = '10px auto';
 para.style.textAlign = 'center';
+para.style.borderRadius = '5px';
