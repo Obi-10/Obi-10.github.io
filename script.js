@@ -17,8 +17,10 @@ function myFunction() {
 //STEP 1: Select the link inside the background section
 const link = document.querySelector('#background a');
 
-//STEP 2: Change the link text and destination
+//STEP 2: Change the link text
 link.textContent = 'Nature Research Article';
+
+//Change the link destination
 link.href = 'https://www.nature.com/articles/nrn3916';
 
 //STEP 3: Reference the <section> to add new content
@@ -26,9 +28,12 @@ const sect = document.querySelector('#background');
 
 //Create a new paragraph with extra facts
 const para = document.createElement('p');
-para.textContent = 'Studies also suggest that meditation can boost creativity and problem-solving skills over time. Meditation has also been shown to improve attention span and reduce mind-wandering in several studies.';
+para.textContent = 'Studies suggest that meditation can boost creativity and problem-solving skills over time. Meditation has also been shown to improve attention span and reduce mind-wandering in several studies.';
 
-//Style the new paragraph
+//Append the new paragraph to the section
+sect.appendChild(para);
+
+//Style the newly created paragraph
 para.style.color = '#333';
 para.style.backgroundColor = '#e0f7fa';
 para.style.padding = '10px';
@@ -37,9 +42,6 @@ para.style.margin = '10px auto';
 para.style.textAlign = 'center';
 para.style.borderRadius = '5px';
 
-//Append the new paragraph to the section
-sect.appendChild(para);
-
-//Move the existing source link paragraph to the very bottom
-const linkPara = sect.querySelector('p:last-of-type'); // assumes your link is the last <p> in HTML
+//STEP 4: Move the existing source link paragraph to the very bottom
+const linkPara = link.parentElement; // select the <p> that contains the link
 sect.appendChild(linkPara);
