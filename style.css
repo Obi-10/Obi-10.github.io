@@ -52,4 +52,5 @@ button:hover {
   display: block;
   margin: auto;
   width: 30%;
+  max-width: 300px;
 }
