@@ -1,8 +1,13 @@
+// -----------------------------
+// Read More / Read Less Toggle
+// -----------------------------
 function myFunction() {
+  // Get the elements for the "Read more" toggle
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
   var btnText = document.getElementById("myBtn");
 
+  // Toggle visibility of the extra text
   if (dots.style.display === "none") {
     dots.style.display = "inline";
     btnText.innerHTML = "Read more";
@@ -14,34 +19,50 @@ function myFunction() {
   }
 }
 
-//STEP 1: Select the link inside the background section
+// -----------------------------
+// Step 1: Modify Existing Source Link
+// -----------------------------
+
+// Select the link inside the background section
 const link = document.querySelector('#background a');
 
-//STEP 2: Change the link text
+// Change the link text to reflect the Nature article
 link.textContent = 'Nature Research Article';
 
-//Change the link destination
+// Update the link URL
 link.href = 'https://www.nature.com/articles/nrn3916';
 
-//STEP 3: Reference the <section> to add new content
+// -----------------------------
+// Step 2: Create a New Paragraph for Extra Facts
+// -----------------------------
+
+// Reference the background section
 const sect = document.querySelector('#background');
 
-//Create a new paragraph with extra facts
+// Create a new paragraph element
 const para = document.createElement('p');
+
+// Add text content with a new, unique fact
 para.textContent = 'Studies suggest that meditation can boost creativity and problem-solving skills over time.';
 
-//Append the new paragraph to the section
+// Append the new paragraph to the section
 sect.appendChild(para);
 
-//Style the newly created paragraph
+// Style the new paragraph to match your layout
 para.style.color = '#333';
 para.style.backgroundColor = '#e0f7fa';
 para.style.padding = '5px';
-para.style.width = '30%';
-para.style.margin = '10px auto';
+para.style.width = '30%';           // same as image width
+para.style.margin = '10px auto';    // center horizontally
 para.style.textAlign = 'center';
 para.style.borderRadius = '5px';
 
-//STEP 4: Move the existing source link paragraph to the very bottom
-const linkPara = link.parentElement; // select the <p> that contains the link
+// -----------------------------
+// Step 3: Move the Source Link Paragraph to the Bottom
+// -----------------------------
+
+// Select the <p> element containing the source link
+const linkPara = document.getElementById('source');
+
+// Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
