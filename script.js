@@ -28,7 +28,7 @@ const sect = document.querySelector('#background');
 
 //Create a new paragraph with extra facts
 const para = document.createElement('p');
-para.textContent = 'Studies suggest that meditation can boost creativity and problem-solving skills over time. Meditation has also been shown to improve attention span and reduce mind-wandering in several studies.';
+para.textContent = 'Studies suggest that meditation can boost creativity and problem-solving skills over time.';
 
 //Append the new paragraph to the section
 sect.appendChild(para);
