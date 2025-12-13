@@ -54,3 +54,69 @@ button:hover {
   width: 30%;
   min-width: 300px;
 }
+
+#contact {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  font-family: Arial, sans-serif;
+}
+
+#contact h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+#submitButton {
+  background-color: #0064d9;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.15s;
+}
+
+#submitButton:hover {
+  background-color: #004eaa;
+  transform: translateY(-1px);
+}
+
+#submitButtonn:active {
+  transform: translateY(0);
+}
