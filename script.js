@@ -68,3 +68,40 @@ const linkPara = document.getElementById('source');
 
 // Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
+
+
+// Load CSV and create a Plotly chart
+Plotly.d3.csv("MeditationData.csv", function(err, rows) {
+  if (err) throw err;
+
+  // Helper to extract a column from the CSV
+  function unpack(rows, key) {
+    return rows.map(function(row) { return row[key]; });
+  }
+
+  var data = [{
+    type: 'bar',
+    x: unpack(rows, 'Effect'),
+    y: unpack(rows, 'Strength of Evidence'),
+    marker: {
+      color: 'rgb(158,202,225)',
+      line: {
+        width: 2.5
+      }
+    }
+  }];
+
+  var layout = {
+    title: 'Meditation and Mindfulness Effects',
+    xaxis: {
+      title: 'Effect',
+      tickangle: -45
+    },
+    yaxis: {
+      title: 'Strength of Evidence'
+    },
+    bargap: 0.05
+  };
+
+  Plotly.newPlot('meditationChart', data, layout);
+});
