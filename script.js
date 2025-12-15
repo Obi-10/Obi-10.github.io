@@ -95,7 +95,7 @@ Plotly.d3.csv("meditationData.csv", function (error, rows) {
     - "Category"
   */
 
-  const effectColumn = "benefir"; // CHANGE if needed
+  const effectColumn = "benefit"; // CHANGE if needed
 
   // Count frequency of each effect
   const counts = {};
