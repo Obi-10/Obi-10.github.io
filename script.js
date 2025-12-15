@@ -76,57 +76,32 @@ sect.appendChild(linkPara);
 // Based on Information Is Beautiful Dataset
 // -----------------------------
 
-fetch("./meditationData.csv")
-  .then(response => response.text())
-  .then(csvText => {
-    const rows = csvText.trim().split("\n");
-    const headers = rows[0].split(",");
+Papa.parse("meditationData.csv", {
+  download: true,
+  header: true,
+  complete: function (results) {
+    const rows = results.data;
 
-    // Find index of the "benefit" column
-    const benefitIndex = headers.indexOf("benefit");
-
-    if (benefitIndex === -1) {
-      console.error("Column 'benefit' not found in CSV");
-      return;
-    }
-
-    const counts = {};
-
-    for (let i = 1; i < rows.length; i++) {
-      const cols = rows[i].split(",");
-      const benefit = cols[benefitIndex];
-
-      if (benefit) {
-        counts[benefit] = (counts[benefit] || 0) + 1;
-      }
-    }
-
-    const benefits = Object.keys(counts);
-    const frequencies = Object.values(counts);
+    const benefits = rows.map(r => r.benefit);
+    const strengths = rows.map(r => Number(r.evidence_strength));
 
     const data = [{
       type: "bar",
       x: benefits,
-      y: frequencies
+      y: strengths
     }];
 
     const layout = {
-      title: "Most Common Meditation Benefits in Scientific Studies",
-      xaxis: {
-        title: "Meditation Benefit",
-        tickangle: -30
-      },
+      title: "Strength of Scientific Evidence for Meditation Benefits",
       yaxis: {
-        title: "Number of Studies Referencing Benefit"
+        title: "Evidence Strength (0 = None, 4 = Strong)",
+        range: [0, 4]
       },
-      margin: {
-        t: 60,
-        b: 160
+      xaxis: {
+        tickangle: -30
       }
     };
 
     Plotly.newPlot("meditationChart", data, layout);
-  })
-  .catch(error => {
-    console.error("Error loading CSV:", error);
-  });
+  }
+});
