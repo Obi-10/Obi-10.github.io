@@ -73,7 +73,7 @@ sect.appendChild(linkPara);
 // Load CSV and create a Plotly chart
 // -----------------------------
 // Plotly Data Visualization
-// Text-only CSV → Frequency Chart
+// Based on Information Is Beautiful Dataset
 // -----------------------------
 
 Plotly.d3.csv("meditationData.csv", function (error, rows) {
@@ -82,37 +82,22 @@ Plotly.d3.csv("meditationData.csv", function (error, rows) {
     return;
   }
 
-  console.log("Columns:", Object.keys(rows[0]));
-
-  /*
-    IMPORTANT:
-    This assumes your CSV has a column that describes
-    the meditation effect or outcome.
-    Common names:
-    - "Effect"
-    - "Outcome"
-    - "Benefit"
-    - "Category"
-  */
-
-  const effectColumn = "benefit"; // CHANGE if needed
-
-  // Count frequency of each effect
+  // Count how often each benefit appears
   const counts = {};
 
   rows.forEach(row => {
-    const effect = row[effectColumn];
-    if (effect) {
-      counts[effect] = (counts[effect] || 0) + 1;
+    const benefit = row["benefit"];
+    if (benefit) {
+      counts[benefit] = (counts[benefit] || 0) + 1;
     }
   });
 
-  const effects = Object.keys(counts);
+  const benefits = Object.keys(counts);
   const frequencies = Object.values(counts);
 
   const data = [{
     type: "bar",
-    x: effects,
+    x: benefits,
     y: frequencies,
     marker: {
       color: "#6baed6"
@@ -121,15 +106,15 @@ Plotly.d3.csv("meditationData.csv", function (error, rows) {
 
   const layout = {
     title: {
-      text: "Frequency of Meditation Effects Reported in Scientific Studies",
+      text: "Most Commonly Reported Benefits of Meditation in Scientific Studies",
       font: { size: 22 }
     },
     xaxis: {
-      title: "Meditation Effect",
+      title: "Meditation Benefit",
       tickangle: -30
     },
     yaxis: {
-      title: "Number of Studies Referencing Effect"
+      title: "Number of Studies Referencing Benefit"
     },
     margin: {
       t: 60,
