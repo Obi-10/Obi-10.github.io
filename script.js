@@ -71,7 +71,7 @@ sect.appendChild(linkPara);
 
 
 // Load CSV and create a Plotly chart
-Plotly.d3.csv("MeditationData.csv", function(err, rows) {
+Plotly.d3.csv("meditationData.csv", function(err, rows) {
   if (err) throw err;
 
   // Helper to extract a column from the CSV
