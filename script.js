@@ -71,37 +71,71 @@ sect.appendChild(linkPara);
 
 
 // Load CSV and create a Plotly chart
-Plotly.d3.csv("meditationData.csv", function(err, rows) {
-  if (err) throw err;
+// -----------------------------
+// Plotly Data Visualization
+// Text-only CSV → Frequency Chart
+// -----------------------------
 
-  // Helper to extract a column from the CSV
-  function unpack(rows, key) {
-    return rows.map(function(row) { return row[key]; });
+Plotly.d3.csv("meditationData.csv", function (error, rows) {
+  if (error) {
+    console.error("CSV failed to load:", error);
+    return;
   }
 
-  var data = [{
-    type: 'bar',
-    x: unpack(rows, 'Effect'),
-    y: unpack(rows, 'Strength of Evidence'),
+  console.log("Columns:", Object.keys(rows[0]));
+
+  /*
+    IMPORTANT:
+    This assumes your CSV has a column that describes
+    the meditation effect or outcome.
+    Common names:
+    - "Effect"
+    - "Outcome"
+    - "Benefit"
+    - "Category"
+  */
+
+  const effectColumn = "benefir"; // CHANGE if needed
+
+  // Count frequency of each effect
+  const counts = {};
+
+  rows.forEach(row => {
+    const effect = row[effectColumn];
+    if (effect) {
+      counts[effect] = (counts[effect] || 0) + 1;
+    }
+  });
+
+  const effects = Object.keys(counts);
+  const frequencies = Object.values(counts);
+
+  const data = [{
+    type: "bar",
+    x: effects,
+    y: frequencies,
     marker: {
-      color: 'rgb(158,202,225)',
-      line: {
-        width: 2.5
-      }
+      color: "#6baed6"
     }
   }];
 
-  var layout = {
-    title: 'Meditation and Mindfulness Effects',
+  const layout = {
+    title: {
+      text: "Frequency of Meditation Effects Reported in Scientific Studies",
+      font: { size: 22 }
+    },
     xaxis: {
-      title: 'Effect',
-      tickangle: -45
+      title: "Meditation Effect",
+      tickangle: -30
     },
     yaxis: {
-      title: 'Strength of Evidence'
+      title: "Number of Studies Referencing Effect"
     },
-    bargap: 0.05
+    margin: {
+      t: 60,
+      b: 160
+    }
   };
 
-  Plotly.newPlot('meditationChart', data, layout);
+  Plotly.newPlot("meditationChart", data, layout);
 });
