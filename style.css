@@ -120,3 +120,30 @@ textarea:focus {
 #submitButtonn:active {
   transform: translateY(0);
 }
+
+#data-visualization {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#data-visualization h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+#data-visualization p {
+  text-align: center;
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+#meditationChart {
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+}
