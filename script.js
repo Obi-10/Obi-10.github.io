@@ -120,6 +120,11 @@ Papa.parse("meditationData.csv", {
         }
       };
 
-    Plotly.newPlot("meditationChart", data, layout);
+    Plotly.newPlot(
+      "meditationChart",
+      data,
+      layout,
+      { responsive: true }
+    );
   }
 });
