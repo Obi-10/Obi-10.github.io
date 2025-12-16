@@ -91,16 +91,34 @@ Papa.parse("meditationData.csv", {
       y: strengths
     }];
 
-    const layout = {
-      title: "Strength of Scientific Evidence for Meditation Benefits",
-      yaxis: {
-        title: "Evidence Strength (0 = None, 4 = Strong)",
-        range: [0, 4]
-      },
-      xaxis: {
-        tickangle: -30
-      }
-    };
+      const layout = {
+        title: {
+          text: "Strength of Scientific Evidence for Meditation Benefits",
+          font: {
+            size: 22,
+            color: "#2c3e50"
+          }
+        },
+        paper_bgcolor: "#ffffff",
+        plot_bgcolor: "#fafafa",
+        yaxis: {
+          title: "Evidence Strength (0 = None, 4 = Strong)",
+          range: [0, 4],
+          gridcolor: "#ddd"
+        },
+        xaxis: {
+          tickangle: -30,
+          tickfont: {
+            size: 12
+          }
+        },
+        margin: {
+          t: 60,
+          l: 60,
+          r: 30,
+          b: 120
+        }
+      };
 
     Plotly.newPlot("meditationChart", data, layout);
   }
