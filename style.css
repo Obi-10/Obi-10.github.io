@@ -146,4 +146,5 @@ textarea:focus {
   background-color: #fafafa;
   border-radius: 10px;
   padding: 10px;
+  @media (max-width: 700px)
 }
