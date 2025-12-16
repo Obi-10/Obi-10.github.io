@@ -146,6 +146,10 @@ textarea:focus {
   background-color: #fafafa;
   border-radius: 10px;
   padding: 10px;
+  margin: auto;
+  width: 100%;
+  height: 550px;
+  max-width: 900px;
 }
 
 @media (max-width: 768px) {
@@ -155,7 +159,7 @@ textarea:focus {
   }
 
   #meditationChart {
-    height: 420px !important;
+    height: 420px;
   }
 
   h1 {
