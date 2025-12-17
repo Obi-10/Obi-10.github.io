@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Data Visualization</title>
+  <link href="style.css" rel="stylesheet">
+
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+
+<body>
+  <nav class="myNav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="data.html">Data Visualization</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="data-visualization">
+    <h2>Meditation Data Analysis</h2>
+    <p>This chart shows how strong the scientific evidence is for different benefits of meditation and mindfulness. Each
+      bar represents one benefit, and the height shows the evidence strength on a scale from 0 to 4. Hovering over the
+      bars also displays the evidence strength.</p>
+
+    <!-- Plotly chart will be drawn here -->
+    <div id="meditationChart"></div>
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
