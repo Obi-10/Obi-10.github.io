@@ -68,12 +68,3 @@ const linkPara = document.getElementById('source');
 
 // Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
-
-
-// Load CSV and create a Plotly chart
-// -----------------------------
-// Plotly Data Visualization
-// Based on Information Is Beautiful Dataset
-// -----------------------------
-
-

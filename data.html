@@ -30,7 +30,10 @@
   </section>
 
 <script>
-
+  // -----------------------------
+  // Plotly Data Visualization
+  // Based on Information Is Beautiful Dataset
+  // -----------------------------
   Papa.parse("meditationData.csv", {
     download: true,
     header: true,
@@ -43,7 +46,10 @@
       const data = [{
         type: "bar",
         x: benefits,
-        y: strengths
+        y: strengths,
+        marker: {
+          color: "#1abc9c"
+        }
       }];
 
         const layout = {
