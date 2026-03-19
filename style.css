@@ -203,3 +203,22 @@ textarea:focus {
     text-align: center;
   }
 }
+
+
+figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+}
+  
+#background figure img {
+    max-width: 40%;
+    min-width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+#contact img {
+  max-width: 120px;
+}
