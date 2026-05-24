@@ -26,7 +26,7 @@ function processNLPFrequency(rawText) {
 
     // Convert the Map to an array, sort by frequency count descending, and grab top 10 rows
     const topTenDataCollection = [...frequencyTracker.entries()]
-        .sort((wordA, wordB) => wordB[1] - wordA[1]); // FIXED: Explicitly target the index [1] count value
+        .sort((wordA, wordB) => wordB[1] - wordA[1]); // FIX: Targets index [1] for numerical count values
 
     return topTenDataCollection.slice(0, 10);
 }
@@ -35,7 +35,7 @@ function processNLPFrequency(rawText) {
 function drawNLPHistogramChart() {
     const sortedDataMetrics = processNLPFrequency(quoteText);
 
-    // FIXED: Isolate the string tokens and numeric values from array pairs explicitly
+    // Isolate the string tokens and numeric values from array pairs explicitly
     const xKeyTerms = sortedDataMetrics.map(record => record[0]);
     const yValueFrequencies = sortedDataMetrics.map(record => record[1]);
 
@@ -73,5 +73,5 @@ function drawNLPHistogramChart() {
     Plotly.newPlot('nlpChart', chartTraceData, chartWindowLayout, { responsive: true });
 }
 
-// Execute the counting script sequence after full HTML document parsing completes
+// Execute the counting script sequence after full HTML document parsing completes -
 window.addEventListener('load', drawNLPHistogramChart);
