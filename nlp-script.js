@@ -73,5 +73,5 @@ function drawNLPHistogramChart() {
     Plotly.newPlot('nlpChart', chartTraceData, chartWindowLayout, { responsive: true });
 }
 
-// Execute the counting script sequence after full HTML document parsing completes
-window.addEventListener('DOMContentLoaded', drawNLPHistogramChart);
+// Execute the counting script sequence after the full page and dimensions have loaded
+window.addEventListener('load', drawNLPHistogramChart);
