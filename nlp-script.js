@@ -1,5 +1,5 @@
-// Target text sample extracted from the PubMed article quote
-const quoteText = `Research over the past two decades broadly supports the claim that mindfulness meditation — practiced widely for the reduction of stress and promotion of health — exerts beneficial effects on physical and mental health, and cognitive performance. Recent neuroimaging studies have begun to uncover the brain areas and networks that mediate these positive effects.`;
+// Grab the text dynamically straight from my HTML blockquote element
+const quoteText = document.getElementById("quoteToAnalyze").textContent;
 
 // Filter out structural stop words to focus the chart on core topical vocabulary
 const stopWords = new Set([
@@ -8,7 +8,7 @@ const stopWords = new Set([
     'it', 'or', 'with', 'as', 'by', 'from', 'this', 'has', 'be', 'are', 'about'
 ]);
 
-// Map algorithm to isolate and calculate unique word frequencies
+// Map algorithm to split the string and calculate unique word frequencies
 function processNLPFrequency(rawText) {
     // Standardize to lowercase and remove punctuation marks
     const formatText = rawText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"’—]/g, " ");
@@ -24,9 +24,9 @@ function processNLPFrequency(rawText) {
         }
     });
 
-    // Convert the Map to an array, sort by frequency count descending, and grab top 10 rows
+    // Convert my Map to an array, sort by frequency count descending, and grab top 10 rows
     const topTenDataCollection = [...frequencyTracker.entries()]
-        .sort((wordA, wordB) => wordB[1] - wordA[1]); // FIX: Targets index [1] for numerical count values
+        .sort((wordA, wordB) => wordB[1] - wordA[1]);
 
     return topTenDataCollection.slice(0, 10);
 }
@@ -35,7 +35,7 @@ function processNLPFrequency(rawText) {
 function drawNLPHistogramChart() {
     const sortedDataMetrics = processNLPFrequency(quoteText);
 
-    // Isolate the string tokens and numeric values from array pairs explicitly
+    // Isolate the string tokens and numeric values from my data arrays
     const xKeyTerms = sortedDataMetrics.map(record => record[0]);
     const yValueFrequencies = sortedDataMetrics.map(record => record[1]);
 
@@ -44,7 +44,7 @@ function drawNLPHistogramChart() {
         y: yValueFrequencies,
         type: 'bar',
         marker: {
-            color: '#1abc9c' // Hex matches global palette accents
+            color: '#1abc9c' // Hex matches my global website accents
         }
     }];
 
@@ -60,8 +60,9 @@ function drawNLPHistogramChart() {
         },
         yaxis: {
             title: 'Frequency Occurrences (Count)',
-            dtick: 1, // Restrict intervals to whole integer steps
-            range: [0, 3],
+            dtick: 1, // Restrict chart intervals to whole integer steps
+            // Dynamically calculates the max layout range limit to protect against dataset shifts
+            range: [0, Math.max(...yValueFrequencies) + 1],
             gridcolor: '#eef0f2'
         },
         paper_bgcolor: '#ffffff',
@@ -69,9 +70,9 @@ function drawNLPHistogramChart() {
         margin: { t: 60, b: 80, l: 60, r: 40 }
     };
 
-    // Render the layout directly into the targeted DOM node element container
+    // Render my layout configurations directly into the targeted DOM node
     Plotly.newPlot('nlpChart', chartTraceData, chartWindowLayout, { responsive: true });
 }
 
-// Execute the counting script sequence after full HTML document parsing completes -
+// Execute my script sequence after the full browser window finishes loading
 window.addEventListener('load', drawNLPHistogramChart);
