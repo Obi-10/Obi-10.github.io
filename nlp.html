@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Language Processing Analysis</title>
+    <!-- Connect our main portfolio styling sheet -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <!-- Pull the main Plotly engine library from CDN for graphing canvas rendering -->
+    <script src="https://plot.ly"></script>
+</head>
+<body>
+    <header>
+        <!-- Dynamic header navigation containing our site links -->
+        <nav class="myNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="background.html">Background</a></li>
+                <li><a href="data.html">Data Visualization</a></li>
+                <li><a href="nlp.html" class="active">NLP Analysis</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding: 25px; max-width: 950px; margin: 0 auto; font-family: sans-serif;">
+        <h1 style="color: #2c3e50; border-bottom: 2px solid #1abc9c; padding-bottom: 10px;">Natural Language Processing: Text Frequency Analysis</h1>
+
+        <!-- Quick intro text explaining what the word counter does -->
+        <section id="assignment-intro" style="margin: 20px 0; line-height: 1.6;">
+            <p>
+                For this project, I built a JavaScript program that acts as a basic text analyzer. The script takes a raw quote, cleans out punctuation, and skips common filler words like "the" or "and."  By using a JavaScript <code>Map</code> to automatically track and count how many times each unique word shows up, the program generates a clean top-10 chart to show the most common terms in the research.
+            </p>
+        </section>
+
+
+        <!-- Container displaying my chosen research quote and its formal source tracking metrics -->
+        <section id="source-material" style="background: #fafafa; padding: 20px; border-left: 6px solid #1abc9c; margin: 25px 0; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; color: #2c3e50;">Source Text Selected for Analysis:</h3>
+            <blockquote style="font-style: italic; color: #444; font-size: 16px; margin: 0 0 15px 0; line-height: 1.5;">
+                "Research over the past two decades broadly supports the claim that mindfulness meditation — practiced widely for the reduction of stress and promotion of health — exerts beneficial effects on physical and mental health, and cognitive performance. Recent neuroimaging studies have begun to uncover the brain areas and networks that mediate these positive effects."
+            </blockquote>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin-bottom: 12px;">
+            <p id="apa-citation" style="font-size: 13px; color: #666; margin: 0;">
+                <strong>Source Citation (APA):</strong> Tang, Y. Y., Hölzel, B. K., & Posner, M. I. (2015). The neuroscience of mindfulness meditation. <em>Nature Reviews Neuroscience</em>, 16(4), 213-225. <a href="https://nature.com" target="_blank" style="color: #1abc9c; text-decoration: none;">https://nature.com</a>
+            </p>
+        </section>
+
+        <!-- Targeted DOM hook container location where Plotly script draws the bar chart canvas -->
+        <section id="visualization-output" style="background: #ffffff; padding: 15px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-top: 30px;">
+            <div id="nlpChart"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align:center; font-size:14px; color:#777; margin-top: 40px; padding: 20px 0; border-top: 1px solid #eee;">© 2026 Obsinet Fekadu</p>
+    </footer>
+
+    <!-- Bind natural language script logic directly to this layout profile -->
+    <script src="nlp-script.js"></script>
+</body>
+</html>
