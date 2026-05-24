@@ -13,7 +13,7 @@ function processNLPFrequency(rawText) {
     // Standardize to lowercase and remove punctuation marks
     const formatText = rawText.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"’—]/g, " ");
     const textArray = formatText.split(/\s+/);
-    
+
     // Initialize a Map structure to track word occurrences
     const frequencyTracker = new Map();
 
@@ -24,9 +24,9 @@ function processNLPFrequency(rawText) {
         }
     });
 
-    // Convert the Map to an array, sort by frequency descending, and grab top 10 rows
+    // Convert the Map to an array, sort by frequency count descending, and grab top 10 rows
     const topTenDataCollection = [...frequencyTracker.entries()]
-        .sort((wordA, wordB) => wordB[1] - wordA[1]);
+        .sort((wordA, wordB) => wordB[1] - wordA[1]); // Fixed: Targets index [1] for numerical counts
 
     return topTenDataCollection.slice(0, 10);
 }
@@ -34,7 +34,7 @@ function processNLPFrequency(rawText) {
 // Generate the visual histogram canvas using Plotly
 function drawNLPHistogramChart() {
     const sortedDataMetrics = processNLPFrequency(quoteText);
-    
+
     // Isolate keys and numerical values for the graph axes
     const xKeyTerms = sortedDataMetrics.map(record => record[0]);
     const yValueFrequencies = sortedDataMetrics.map(record => record[1]);
