@@ -50,7 +50,7 @@ function drawNLPHistogramChart() {
 
     const chartWindowLayout = {
         title: {
-            text: 'Top 10 High-Frequency Terms in Nature Neuroscience Quote',
+            text: 'Top 10 High-Frequency Terms in PubMed Article Quote',
             font: { size: 18, color: '#2c3e50' }
         },
         xaxis: {
