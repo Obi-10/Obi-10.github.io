@@ -1,4 +1,4 @@
-// Target text sample extracted from the Nature Reviews Neuroscience article quote
+// Target text sample extracted from the PubMed article quote
 const quoteText = `Research over the past two decades broadly supports the claim that mindfulness meditation — practiced widely for the reduction of stress and promotion of health — exerts beneficial effects on physical and mental health, and cognitive performance. Recent neuroimaging studies have begun to uncover the brain areas and networks that mediate these positive effects.`;
 
 // Filter out structural stop words to focus the chart on core topical vocabulary
