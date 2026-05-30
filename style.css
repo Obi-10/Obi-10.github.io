@@ -229,3 +229,62 @@ img[src="email-message-vector-icon.jpg"] {
   max-width: 120px;
   height: auto;
 }
+
+@media (max-height: 800px) {
+  p {
+    font-size: 10vmin;
+  }
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+}

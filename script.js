@@ -68,3 +68,8 @@ const linkPara = document.getElementById('source');
 
 // Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
+
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("active");
+}
