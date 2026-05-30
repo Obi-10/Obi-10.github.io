@@ -252,33 +252,35 @@ img[src="email-message-vector-icon.jpg"] {
   transition: all 0.3s ease;
 }
 
-/* --- Responsive Layout Breakpoints --- */
-
-/* Raised from 600px to 850px to prevent awkward desktop text wrapping */
+/* Mobile adjustments at 850px breakpoint */
 @media (max-width: 850px) {
   .myNav {
     background-color: #2c3e50;
     position: relative;
   }
 
+  /* Expose the hamburger icon button */
   .hamburger-menu {
-    display: flex; /* Displays the menu bars icon */
+    display: flex !important;
   }
 
-  .myNav ul {
-    display: none; /* Safely hides the list on small screens until opened */
+  /* FORCE hide the menu by default using its specific ID */
+  .myNav #navLinks {
+    display: none !important;
     flex-direction: column;
     text-align: center;
     width: 100%;
     background-color: #2c3e50;
+    padding: 0;
+    margin: 0;
   }
 
-  /* Toggled via JavaScript */
-  .myNav ul.show-menu {
-    display: flex;
+  /* Display class toggled via JavaScript */
+  .myNav #navLinks.show-menu {
+    display: flex !important;
   }
 
-  /* Animations for turning the bars into an 'X' */
+  /* Morphing animation effects for hamburger bars turning into an X */
   .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
@@ -289,6 +291,7 @@ img[src="email-message-vector-icon.jpg"] {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
+
 
 /* Step 2: Global Fluid Layout Image Constraints */
 img {
