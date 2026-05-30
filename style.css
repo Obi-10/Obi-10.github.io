@@ -232,7 +232,7 @@ img[src="email-message-vector-icon.jpg"] {
 
 @media (max-height: 800px) {
   p {
-    font-size: 10vmin;
+    font-size: 1.1rem;
   }
 }
 
@@ -258,6 +258,7 @@ img {
   gap: 20px;
 }
 
+
 /* HAMBURGER BUTTON */
 .hamburger {
   display: none;
@@ -265,37 +266,28 @@ img {
 }
 
 .bar {
-  display: block;
   width: 25px;
   height: 3px;
-  margin: 5px 0;
-  background-color: #000;
-  transition: 0.3s;
+  background-color: white; /* change if your nav text is dark */
+  margin: 5px;
+  display: block;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE MENU */
 @media (max-width: 768px) {
 
   .hamburger {
     display: block;
   }
 
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 60px;
+  #navMenu {
+    display: none;
     flex-direction: column;
-    background-color: #ffffff;
-    width: 100%;
     text-align: center;
-    transition: 0.3s;
   }
 
-  .nav-menu.active {
-    left: 0;
+  #navMenu.active {
+    display: flex;
   }
 
-  .nav-menu li {
-    padding: 10px 0;
-  }
 }

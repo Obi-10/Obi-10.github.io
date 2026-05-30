@@ -70,16 +70,8 @@ const linkPara = document.getElementById('source');
 sect.appendChild(linkPara);
 
 const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+const navMenu = document.getElementById("navMenu");
 
-// Toggle menu when hamburger is clicked
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
-
-// Close menu when link is clicked (important)
-document.querySelectorAll(".nav-link").forEach(link =>
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-  })
-);
