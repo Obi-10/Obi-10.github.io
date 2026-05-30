@@ -69,13 +69,17 @@
         }
       }];
 
-        const layout = {
-          // Fix: Center the title text horizontally so it never clips off-screen
+                const layout = {
+          // Fix: Wrap title onto two rows and scale font down so it never clips into margins
           title: {
-            text: "Strength of Evidence for Meditation Benefits",
-            font: { size: 18, color: "#2c3e50" },
+            text: "Strength of Evidence<br>for Meditation Benefits",
+            font: { 
+              size: 14, /* Reduced from 18 to keep text perfectly legible on small screen sizes */
+              color: "#2c3e50" 
+            },
             x: 0.5,
-            xanchor: "center"
+            xanchor: "center",
+            xref: "paper"
           },
           paper_bgcolor: "#ffffff",
           plot_bgcolor: "#fafafa",
@@ -85,15 +89,15 @@
             gridcolor: "#ddd", 
             automargin: true 
           },
-          // Fix: Shift the labels to a clean vertical -90 angle so they stay separated on mobile
           xaxis: { 
             tickangle: -90, 
             tickfont: { size: 11 }, 
             automargin: true 
           },
-          // Fix: Open up extra padding on the bottom margin container for vertical labels
-          margin: { t: 80, l: 50, r: 30, b: 160 }
+          // Fix: Increase the top margin padding slightly to give the 2-line title more breathing room
+          margin: { t: 90, l: 50, r: 30, b: 160 }
         };
+
 
 
       Plotly.newPlot(
