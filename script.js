@@ -19,11 +19,6 @@ moreText.style.display = "inline";
 }
 
 // -----------------------------
-// Step 1, 2, and 3: Run only if background section exists on the page
-// -----------------------------
-if (document.querySelector('#background')) {
-
-// -----------------------------
 // Step 1: Modify Existing Source Link
 // -----------------------------
 // Select the link inside the background section
@@ -31,7 +26,7 @@ const link = document.querySelector('#background a');
 // Change the link text to reflect the Nature article
 link.textContent = 'Nature Research Article';
 // Update the link URL
-link.href = 'https://nature.com';
+link.href = 'https://www.nature.com/articles/nrn3916';
 
 // -----------------------------
 // Step 2: Create a New Paragraph for Extra Facts
@@ -41,7 +36,7 @@ const sect = document.querySelector('#background');
 // Create a new paragraph element
 const para = document.createElement('p');
 // Add text content with a new, unique fact
-para.textContent = 'Studies suggest that meditation can boost creativity and problem-solving skills over time.';
+para.textContent = 'Studies suggest that meditation can boost creativity and problem solving skills over time.';
 // Append the new paragraph to the section
 sect.appendChild(para);
 // Style the new paragraph
@@ -63,14 +58,15 @@ const linkPara = document.getElementById('source');
 // Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
 
-}
+// -----------------------------
+// Hamburger Menu Toggle
+// -----------------------------
+document.addEventListener("click", function (event) {
+  const hamburger = event.target.closest("#hamburgerToggle");
+  const navLinks = document.getElementById("navLinks");
 
-// -----------------------------
-// Bulletproof Independent Menu Handler
-// -----------------------------
-function toggleMenu() {
-  var menuList = document.getElementById("navLinks");
-  if (menuList) {
-    menuList.classList.toggle("show-menu");
+  if (hamburger && navLinks) {
+    navLinks.classList.toggle("show-menu");
+    hamburger.classList.toggle("open");
   }
-}
+});
