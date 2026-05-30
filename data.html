@@ -68,7 +68,11 @@
           color: "#1abc9c"
         }
       }];
-
+        // Fix: Determine title text, font size, and padding dynamically based on screen width
+        const isMobile = window.innerWidth < 600;
+        const chartTitle = isMobile ? "Strength of Evidence<br>for Meditation Benefits" : "Strength of Evidence for Meditation Benefits";
+        const chartTitleSize = isMobile ? 14 : 18;
+        const chartTopMargin = isMobile ? 90 : 60;
                 const layout = {
           // Fix: Wrap title onto two rows and scale font down so it never clips into margins
           title: {
