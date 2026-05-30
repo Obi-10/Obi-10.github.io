@@ -73,12 +73,13 @@ sect.appendChild(linkPara);
 // Hamburger Menu Toggle
 // -----------------------------
 document.addEventListener("DOMContentLoaded", function () {
+  // Use your exact layout IDs instead of the template classes
   const hamburger = document.getElementById("hamburgerToggle");
   const navLinks = document.getElementById("navLinks");
   
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", function () {
-      // Toggle 'show-menu' on the links list, and 'open' on the hamburger button
+      // Toggle class lists using your original CSS naming conventions
       navLinks.classList.toggle("show-menu");
       hamburger.classList.toggle("open");
     });
