@@ -70,18 +70,17 @@ const linkPara = document.getElementById('source');
 sect.appendChild(linkPara);
 
 // -----------------------------
-// Hamburger Menu Toggle
+// Bulletproof Hamburger Menu Toggle
 // -----------------------------
-document.addEventListener("DOMContentLoaded", function () {
-  // Use your exact layout IDs instead of the template classes
-  const hamburger = document.getElementById("hamburgerToggle");
+document.addEventListener("click", function (event) {
+  // Find the closest hamburger button element from the click target
+  const hamburger = event.target.closest("#hamburgerToggle");
   const navLinks = document.getElementById("navLinks");
-  
+
+  // If the user clicked the hamburger icon, toggle the menu classes
   if (hamburger && navLinks) {
-    hamburger.addEventListener("click", function () {
-      // Toggle class lists using your original CSS naming conventions
-      navLinks.classList.toggle("show-menu");
-      hamburger.classList.toggle("open");
-    });
+    navLinks.classList.toggle("show-menu");
+    hamburger.classList.toggle("open");
   }
 });
+
