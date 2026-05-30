@@ -243,48 +243,59 @@ img {
   height: auto;
 }
 
-.nav-container {
+/* NAVBAR BASE */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
 }
 
-.nav-links {
+/* NAV LINKS */
+.nav-menu {
   display: flex;
   list-style: none;
   gap: 20px;
 }
 
+/* HAMBURGER BUTTON */
 .hamburger {
   display: none;
-  font-size: 30px;
   cursor: pointer;
 }
 
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #000;
+  transition: 0.3s;
+}
 
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
 
   .hamburger {
     display: block;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #ffffff;
-    position: absolute;
+  .nav-menu {
+    position: fixed;
+    left: -100%;
     top: 60px;
-    left: 0;
-    transition: all 0.3s ease;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
     text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
     padding: 10px 0;
   }
 }

@@ -69,7 +69,17 @@ const linkPara = document.getElementById('source');
 // Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
 
-function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  nav.classList.toggle("active");
-}
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+// Toggle menu when hamburger is clicked
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+// Close menu when link is clicked (important)
+document.querySelectorAll(".nav-link").forEach(link =>
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  })
+);
