@@ -8,10 +8,17 @@
 </head>
 
 <body>
-
- <header>
+  <header>
     <nav class="myNav">
-      <ul>
+      <!-- Animated icon that triggers the function directly -->
+      <div class="hamburger-menu" id="hamburgerToggle" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul id="navLinks">
+        <!-- Navigation bar containing my site links -->
         <li><a href="index.html">Home</a></li>
         <li><a href="background.html">Background</a></li>
         <li><a href="data.html">Data Visualization</a></li>
