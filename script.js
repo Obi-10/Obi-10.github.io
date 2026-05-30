@@ -69,9 +69,18 @@ const linkPara = document.getElementById('source');
 // Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
 
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.getElementById("navMenu");
+// -----------------------------
+// Hamburger Menu Toggle
+// -----------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburgerToggle");
+  const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      // Toggle menu visibility visibility and morph icon lines into an X
+      navLinks.classList.toggle("show-menu");
+      hamburger.classList.toggle("open");
+    });
+  }
 });
