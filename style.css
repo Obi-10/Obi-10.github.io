@@ -24,7 +24,7 @@ p {
   max-width: 1000px;
   margin: 10px auto;
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 18px; /* Clean, stable, highly-readable body text */
 }
 
 #source {
@@ -166,7 +166,7 @@ input:focus, textarea:focus {
   p { font-size: 16px; }
 }
 
-/* --- Navigation Base Structure --- */
+/* --- Clean Desktop Navigation Layout --- */
 .myNav ul {
   list-style: none;
   margin: 0;
@@ -174,43 +174,42 @@ input:focus, textarea:focus {
   display: flex;
   justify-content: center;
   background-color: #2c3e50;
-  flex-wrap: nowrap; /* Prevents text wrapping on standard laptop viewports */
+  flex-wrap: nowrap; /* Forces desktop links onto a single clean line */
 }
 
 .myNav li a {
   display: block;
-  padding: 14px 15px; /* Sightly snugger padding to protect available horizontal row space */
+  padding: 14px 15px; /* Compact padding to preserve row width */
   color: white;
   text-decoration: none;
   font-weight: 500;
-  white-space: nowrap; /* Forces anchor link items to stay grouped side-by-side */
+  white-space: nowrap; /* Keeps words together on desktop view */
 }
 
 .myNav li a:hover {
   background-color: #1f3333;
 }
 
-/* Center all images inside figure */
-figure img {
+/* --- Base Image Configuration --- */
+figure img, img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%; /* Keeps all images perfectly fluid and responsive */
   height: auto;
 }
 
-/* Reduce brain image */
+/* Specific image layout overrides */
 #background figure img[src="abstract_brain.png"] {
   max-width: 45%;
   min-width: 240px;
 }
 
-/* Reduce contact icon */
 img[src="email-message-vector-icon.jpg"] {
   max-width: 120px;
-  height: auto;
 }
 
-/* --- Hamburger Menu Icon Core Elements --- */
+/* --- Interactive Hamburger Styling --- */
 .hamburger-menu {
   display: none;
   flex-direction: column;
@@ -219,6 +218,8 @@ img[src="email-message-vector-icon.jpg"] {
   height: 21px;
   cursor: pointer;
   padding: 14px;
+  -webkit-user-select: none; /* Stops blue text-selection highlight */
+  user-select: none;
 }
 
 .hamburger-menu .bar {
@@ -229,19 +230,18 @@ img[src="email-message-vector-icon.jpg"] {
   transition: all 0.3s ease;
 }
 
-/* --- Mobile Responsive Rules Breakpoint --- */
+/* --- Mobile Breakpoint (Switches early to save row room) --- */
 @media (max-width: 850px) {
   .myNav {
     background-color: #2c3e50;
     position: relative;
   }
 
-  /* Expose the hamburger button structure */
   .hamburger-menu {
     display: flex;
   }
 
-  /* Target element hidden out of sight by default on mobile devices */
+  /* Completely hides navigation links on load */
   .myNav #navLinks {
     display: none;
     flex-direction: column;
@@ -252,12 +252,12 @@ img[src="email-message-vector-icon.jpg"] {
     margin: 0;
   }
 
-  /* Class assigned via click handler logic to toggle active states */
+  /* Toggled via safe script logic */
   .myNav #navLinks.show-menu {
     display: flex;
   }
 
-  /* Morphing transition rules creating the closing 'X' graphic layout */
+  /* Animates the menu bars smoothly into an X */
   .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
@@ -268,18 +268,3 @@ img[src="email-message-vector-icon.jpg"] {
     transform: translateY(-9px) rotate(-45deg);
   }
 }
-
-/* UNIT 8 STEP 2: Make images responsive */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* UNIT 8 STEP 1: Task assigned text-scaling layout media query rules */
-@media (max-height: 800px) {
-  p {
-    font-size: min(10vmin, 24px);
-  }
-}
-
