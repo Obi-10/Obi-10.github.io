@@ -190,7 +190,7 @@ input:focus, textarea:focus {
   background-color: #1f3333;
 }
 
-/* --- Center Images Inside Figure (Your Original Rule) --- */
+/* --- Center Images Inside Figure --- */
 figure img {
   display: block;
   margin-left: auto;
@@ -199,13 +199,13 @@ figure img {
   max-width: 100%; /* Keeps it fully fluid and responsive */
 }
 
-/* Reduce brain image (Your Original Rule) */
+/* Reduce brain image */
 #background figure img[src="abstract_brain.png"] {
   max-width: 45%;
   min-width: 240px;
 }
 
-/* Reduce contact icon (Your Original Rule) */
+/* Reduce contact icon */
 img[src="email-message-vector-icon.jpg"] {
   max-width: 120px;
   height: auto;
@@ -245,35 +245,18 @@ img[src="email-message-vector-icon.jpg"] {
     z-index: 10;
   }
   .hamburger-menu .bar {
-    background-color: white !important;
+    background-color: white !important; /* Forces the bars to stay white and visible */
   }
   .myNav #navLinks {
-    display: none !important;
+    display: none !important; /* Keeps links hidden until clicked */
     flex-direction: column;
     width: 100%;
-    padding: 15px 0; /* Add top and bottom breathing room inside the container */
+    padding: 10px 0 0 0;
     margin: 0;
   }
   .myNav #navLinks.show-menu {
-    display: flex !important;
+    display: flex !important; /* Drops the menu list down */
   }
-  
-  /* --- New Visual Enhancements (With High Priority Selectors) --- */
-  .myNav #navLinks li {
-    width: 100% !important;
-  }
-  /* Adding "ul#navLinks" tells the browser to override older rules */
-  .myNav ul#navLinks li a {
-    padding: 16px 0 !important; /* Forces the luxury spacing gaps on rows */
-    font-size: 19px !important; /* Forces crisp, clear link text scaling */
-    letter-spacing: 0.5px !important; 
-    transition: background-color 0.2s ease;
-  }
-  .myNav ul#navLinks li a:hover {
-    background-color: #34495e !important; /* Forces slate gray highlight on tap */
-  }
-
-  /* Morphing transition rules creating the closing 'X' graphic layout */
   .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
