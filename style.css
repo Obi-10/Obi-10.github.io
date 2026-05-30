@@ -245,18 +245,34 @@ img[src="email-message-vector-icon.jpg"] {
     z-index: 10;
   }
   .hamburger-menu .bar {
-    background-color: white !important; /* Forces the bars to stay white and visible */
+    background-color: white !important;
   }
   .myNav #navLinks {
-    display: none !important; /* Keeps links hidden until clicked */
+    display: none !important;
     flex-direction: column;
     width: 100%;
-    padding: 10px 0 0 0;
+    padding: 15px 0; /* Add top and bottom breathing room inside the container */
     margin: 0;
   }
   .myNav #navLinks.show-menu {
-    display: flex !important; /* Drops the menu list down */
+    display: flex !important;
   }
+  
+  /* --- New Visual Enhancements --- */
+  .myNav #navLinks li {
+    width: 100%; /* Makes the entire row tapable */
+  }
+  .myNav #navLinks li a {
+    padding: 16px 0; /* Creates large, luxury app-style padding gaps */
+    font-size: 19px; /* Gives the text a clean, crisp prominence */
+    letter-spacing: 0.5px; /* Subtle upscale text track spacing */
+    transition: background-color 0.2s ease; /* Silky-smooth color shifting transition */
+  }
+  .myNav #navLinks li a:hover {
+    background-color: #34495e; /* Elegant charcoal-slate tone highlight on tap/hover */
+  }
+
+  /* Morphing transition rules creating the closing 'X' graphic layout */
   .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
