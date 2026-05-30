@@ -75,10 +75,10 @@ sect.appendChild(linkPara);
 document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.getElementById("hamburgerToggle");
   const navLinks = document.getElementById("navLinks");
-
+  
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", function () {
-      // Toggle menu visibility visibility and morph icon lines into an X
+      // Toggle 'show-menu' on the links list, and 'open' on the hamburger button
       navLinks.classList.toggle("show-menu");
       hamburger.classList.toggle("open");
     });
