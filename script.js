@@ -59,14 +59,14 @@ const linkPara = document.getElementById('source');
 sect.appendChild(linkPara);
 
 // -----------------------------
-// Bottom Addition: Safe Global Click Toggle
+// Bottom Addition: Direct Menu Toggle Function
 // -----------------------------
-window.addEventListener("click", function (event) {
-  var hamburgerButton = event.target.closest("#hamburgerToggle");
-  var navLinksMenu = document.getElementById("navLinks");
-
-  if (hamburgerButton && navLinksMenu) {
-    navLinksMenu.classList.toggle("show-menu");
-    hamburgerButton.classList.toggle("open");
+function toggleMenu() {
+  var hamburger = document.getElementById("hamburgerToggle");
+  var navLinks = document.getElementById("navLinks");
+  
+  if (hamburger && navLinks) {
+    navLinks.classList.toggle("show-menu");
+    hamburger.classList.toggle("open");
   }
-});
+}
