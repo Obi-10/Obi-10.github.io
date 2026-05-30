@@ -258,18 +258,19 @@ img[src="email-message-vector-icon.jpg"] {
     display: flex !important;
   }
   
-  /* --- New Visual Enhancements --- */
+  /* --- New Visual Enhancements (With High Priority Selectors) --- */
   .myNav #navLinks li {
-    width: 100%; /* Makes the entire row tapable */
+    width: 100% !important;
   }
-  .myNav #navLinks li a {
-    padding: 16px 0; /* Creates large, luxury app-style padding gaps */
-    font-size: 19px; /* Gives the text a clean, crisp prominence */
-    letter-spacing: 0.5px; /* Subtle upscale text track spacing */
-    transition: background-color 0.2s ease; /* Silky-smooth color shifting transition */
+  /* Adding "ul#navLinks" tells the browser to override older rules */
+  .myNav ul#navLinks li a {
+    padding: 16px 0 !important; /* Forces the luxury spacing gaps on rows */
+    font-size: 19px !important; /* Forces crisp, clear link text scaling */
+    letter-spacing: 0.5px !important; 
+    transition: background-color 0.2s ease;
   }
-  .myNav #navLinks li a:hover {
-    background-color: #34495e; /* Elegant charcoal-slate tone highlight on tap/hover */
+  .myNav ul#navLinks li a:hover {
+    background-color: #34495e !important; /* Forces slate gray highlight on tap */
   }
 
   /* Morphing transition rules creating the closing 'X' graphic layout */
