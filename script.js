@@ -66,15 +66,11 @@ sect.appendChild(linkPara);
 }
 
 // -----------------------------
-// Bulletproof Hamburger Menu Toggle
+// Bulletproof Independent Menu Handler
 // -----------------------------
-document.addEventListener("click", function (event) {
-// Find the closest hamburger button element from the click target
-const hamburger = event.target.closest("#hamburgerToggle");
-const navLinks = document.getElementById("navLinks");
-// If the user clicked the hamburger icon, toggle the menu classes
-if (hamburger && navLinks) {
-navLinks.classList.toggle("show-menu");
-hamburger.classList.toggle("open");
+function toggleMenu() {
+  var menuList = document.getElementById("navLinks");
+  if (menuList) {
+    menuList.classList.toggle("show-menu");
+  }
 }
-});
