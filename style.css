@@ -251,12 +251,19 @@ img[src="email-message-vector-icon.jpg"] {
     display: none !important; /* Keeps links hidden until clicked */
     flex-direction: column;
     width: 100%;
-    padding: 10px 0 0 0;
+    padding: 10px 0; /* Adds slight spacing to the top and bottom of the list */
     margin: 0;
   }
   .myNav #navLinks.show-menu {
     display: flex !important; /* Drops the menu list down */
   }
+  
+  /* Fix: Center the links and add standard padding so they don't look crowded */
+  .myNav #navLinks li a {
+    text-align: center;
+    padding: 12px 0;
+  }
+
   .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
