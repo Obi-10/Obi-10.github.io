@@ -279,6 +279,7 @@ img {
 /* UNIT 8 STEP 1: Task assigned text-scaling layout media query rules */
 @media (max-height: 800px) {
   p {
-    font-size: 10vmin;
+    font-size: min(10vmin, 24px);
   }
 }
+

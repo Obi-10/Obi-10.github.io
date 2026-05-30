@@ -2,52 +2,48 @@
 // Read More / Read Less Toggle
 // -----------------------------
 function myFunction() {
-  // Get the elements for the "Read more" toggle
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  // Toggle visibility of the extra text
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
-  }
+// Get the elements for the "Read more" toggle
+var dots = document.getElementById("dots");
+var moreText = document.getElementById("more");
+var btnText = document.getElementById("myBtn");
+// Toggle visibility of the extra text
+if (dots.style.display === "none") {
+dots.style.display = "inline";
+btnText.innerHTML = "Read more";
+moreText.style.display = "none";
+} else {
+dots.style.display = "none";
+btnText.innerHTML = "Read less";
+moreText.style.display = "inline";
 }
+}
+
+// -----------------------------
+// Step 1, 2, and 3: Run only if background section exists on the page
+// -----------------------------
+if (document.querySelector('#background')) {
 
 // -----------------------------
 // Step 1: Modify Existing Source Link
 // -----------------------------
-
 // Select the link inside the background section
 const link = document.querySelector('#background a');
-
 // Change the link text to reflect the Nature article
 link.textContent = 'Nature Research Article';
-
 // Update the link URL
-link.href = 'https://www.nature.com/articles/nrn3916';
+link.href = 'https://nature.com';
 
 // -----------------------------
 // Step 2: Create a New Paragraph for Extra Facts
 // -----------------------------
-
 // Reference the background section
 const sect = document.querySelector('#background');
-
 // Create a new paragraph element
 const para = document.createElement('p');
-
 // Add text content with a new, unique fact
 para.textContent = 'Studies suggest that meditation can boost creativity and problem-solving skills over time.';
-
 // Append the new paragraph to the section
 sect.appendChild(para);
-
 // Style the new paragraph
 para.style.color = '#333';
 para.style.backgroundColor = '#d9d7d7';
@@ -62,25 +58,23 @@ para.style.minWidth = '300px';
 // -----------------------------
 // Step 3: Move the Source Link Paragraph to the Bottom
 // -----------------------------
-
 // Select the <p> element containing the source link
 const linkPara = document.getElementById('source');
-
 // Append it to the end of the section to ensure it appears at the very bottom
 sect.appendChild(linkPara);
+
+}
 
 // -----------------------------
 // Bulletproof Hamburger Menu Toggle
 // -----------------------------
 document.addEventListener("click", function (event) {
-  // Find the closest hamburger button element from the click target
-  const hamburger = event.target.closest("#hamburgerToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  // If the user clicked the hamburger icon, toggle the menu classes
-  if (hamburger && navLinks) {
-    navLinks.classList.toggle("show-menu");
-    hamburger.classList.toggle("open");
-  }
+// Find the closest hamburger button element from the click target
+const hamburger = event.target.closest("#hamburgerToggle");
+const navLinks = document.getElementById("navLinks");
+// If the user clicked the hamburger icon, toggle the menu classes
+if (hamburger && navLinks) {
+navLinks.classList.toggle("show-menu");
+hamburger.classList.toggle("open");
+}
 });
-
