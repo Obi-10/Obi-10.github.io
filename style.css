@@ -232,48 +232,31 @@ img[src="email-message-vector-icon.jpg"] {
   transition: all 0.3s ease;
 }
 
-/* --- Mobile Responsive Rules Breakpoint --- */
+/* --- Bottom Addition: Animated Hamburger Layout --- */
 @media (max-width: 850px) {
-  /* Fix: Add background color and layout containment to the main navigation bar */
   .myNav {
     background-color: #2c3e50;
     position: relative;
-    min-height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 10px 0;
   }
-
-  /* Expose the hamburger button structure */
   .hamburger-menu {
     display: flex;
-    padding: 14px;
-    width: 30px;
+    margin-left: 15px;
     z-index: 10;
   }
-
-  /* Fix: Change the bars from white to dark blue so they are visible on your page layout */
   .hamburger-menu .bar {
-    background-color: #2c3e50;
+    background-color: white !important; /* Forces the bars to stay white and visible */
   }
-
-  /* Target element hidden out of sight by default on mobile devices */
   .myNav #navLinks {
-    display: none;
+    display: none !important; /* Keeps links hidden until clicked */
     flex-direction: column;
-    text-align: center;
     width: 100%;
-    background-color: #2c3e50;
-    padding: 0;
+    padding: 10px 0 0 0;
     margin: 0;
   }
-
-  /* Class assigned via click handler logic to toggle active states */
   .myNav #navLinks.show-menu {
-    display: flex;
+    display: flex !important; /* Drops the menu list down */
   }
-
-  /* Morphing transition rules creating the closing 'X' graphic layout */
   .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
